@@ -1,11 +1,5 @@
 (
-            # TODO:
-# * account for SCT codes in addition to SRT
-# * add Anatomic Region Modifier
-# Debug:
-#WITH
-#  segs_details AS (
-WITH
+ WITH
   segs AS (
   SELECT
     PatientID,
@@ -14,7 +8,7 @@ WITH
     FrameOfReferenceUID,
     SegmentSequence
   FROM
-    `medical-imaging-ai.cohorts.LCTSC-dicom`
+    `PROJECT_NAME.DATASET_NAME.TABLE_NAME`
   WHERE
     # more reliable than Modality = "SEG"
     SOPClassUID = "1.2.840.10008.5.1.4.1.1.66.4" )
@@ -37,21 +31,5 @@ SELECT
 FROM
   segs
 CROSS JOIN
-  UNNEST(SegmentSequence) AS unnested # correctness check: there should be 4 segmented nodules for this subject
-  #where PatientID = "LIDC-IDRI-0001"
-  # Note that it is possible to have some of those sequences empty!
-  # Debug:
-  #WHERE
-  #  ARRAY_LENGTH(unnested.AnatomicRegionSequence) = 0
-  # Debug:
-  #    )
-#SELECT
-#  DISTINCT SegmentedPropertyTypeCodeSequence[
-#OFFSET
-#  (0)].CodeMeaning
-#FROM
-#  segs_details
-#WHERE
-#  ARRAY_LENGTH(SegmentedPropertyTypeCodeSequence) <> 0
-
-        )
+  UNNEST(SegmentSequence) AS unnested 
+)
