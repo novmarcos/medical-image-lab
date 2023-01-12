@@ -40,7 +40,8 @@ echo ### add path of new packages to /etc/profile ###
 export CONDA_DIR=/opt/conda
 export HOME="/home/jupyter"
 export PATH="${CONDA_DIR}/bin:/usr/sbin:/usr/bin:/sbin:/bin:${HOME}/Slicer/lib/Python/bin:${PATH}"
-printf "export MIL_VERSION=1 \nexport PATH=$PATH" > /tmp/mil.env
+export DISPLAY=":1.0"
+printf "export DISPLAY=$DISPLAY \nexport MIL_VERSION=1 \nexport PATH=$PATH" > /tmp/mil.env
 sudo sh -c 'cat /tmp/mil.env >> /etc/profile'
 echo "#####  Configure updated JupyterLab options    #####" >> /tmp/slicer-post-install.log
 
