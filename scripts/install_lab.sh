@@ -118,6 +118,10 @@ echo #####  install additional packages in the slicer environment ####
 $HOME/Slicer/bin/PythonSlicer -m pip install --upgrade ipython ipywidgets ipyevents ipycanvas
 echo "#####  install additional packages in the slicer environment ####" >> /tmp/slicer-post-install.log
 
+echo #####  install NVIDIA GPU Monitor ####
+pip install --user jupyterlab_nvdashboard
+echo "#####  install NVIDIA GPU Monitor ####" >> /tmp/slicer-post-install.log
+
 echo "########################################" >> /tmp/slicer-post-install.log
 echo "##### Post Startup Script Complete #####" >> /tmp/slicer-post-install.log
 echo "########################################" >> /tmp/slicer-post-install.log
