@@ -9,13 +9,13 @@ There are only a few things that you need to know:
 **To deploy the Google Cloud Medical Imaging Lab:**
 follow the directions here: https://github.com/novmarcos/medical-image-lab/blob/main/instructions/en.md
 
-**Project Description**
+# Project Description
 This Google Cloud Medical Imaging Lab is an open source extension which adds medical imaging processing capabilities to the base Jupyter environment of the Google Cloud Vertex AI Workbench.  The following are the main packages that are fetched during the installation process:
 - Jupyter Desktop Server and its dependencies (including TurboVNC, noVNC and jupyter-proxy): https://github.com/yuvipanda/jupyter-desktop-server
 - The NIH 3DSlicer application: https://www.slicer.org/
 - The MONAI project's MONAILabel application: https://github.com/Project-MONAI/MONAILabel
 
-**Architecture**
+# Architecture**
 The NIH 3DSlicer application is a popular application for working with medical images. This application is able to render large three dimensional images, such as complete CT scans, MRIs and so forth. Due to its advanced graphical capabilites, the 3DSlicer requires a graphical desktop such as X-windows, which makes its deployment in a hosted Cloud Environment difficult. The Slicer Jupyter project (https://github.com/Slicer/SlicerJupyter) provides an elegant solution to this problem by leveraging several open source components which basically achieve the magic of tunneling a desktop protocol (TurboVNC) through the JupyerLab server process. This solution provides secure access such that a Cloud user can access both the JupyterLab application (Notebooks) as well as the X-windows desktop of the VM that is hosting JupyterLab. The overall achitecture of this solution is illustrated below:
 ![Google Cloud Medical Imaging Lab Architecture](img/jupyter-desktop-arch.png)
 
