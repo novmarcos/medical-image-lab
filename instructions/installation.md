@@ -32,12 +32,12 @@ To create a VM with the recommended configuration follow these steps:
 2. Click on the "+" sign next to the Folder icon to open a Jupyter Launcher tab
 3. Open a Jupyter Terminal Window by selecting "Terminal" in the "Other" section
 4. In the new terminal window, CD to the installation directory and run the installation script:
-<ql-code-block language="bash" >
+```
 chmod u+x ~/medical-image-lab/install
 chmod u+x ~/medical-image-lab/scripts  
 cd ~/medical-image-lab/install
 ./install_ab.sh
-</ql-code-block>
+```
     
 ## 5. Wait for installation and restart the Jupyter Lab process
 
@@ -46,25 +46,25 @@ The installation fecthes several packages and can take some time, approximately 
 1. Click **Terminal** to open a terminal shell. 
 
 2. Run the following command in the shell to check the progress of the 3D Slicer installation.
-<ql-code-block language="bash" >
+```
 cat /tmp/slicer-post-install.log
-</ql-code-block>
+```
 
 When the script has completed you will see the following lines
-<ql-code-block output language="none" >
+```
 #####  install additional packages in the slicer environment ####
 
 ########################################
 ##### Post Startup Script Complete #####
 ########################################
-</ql-code-block>
+```
 
 Once the Google Medical Imaging Lab components have been installed you need to restart the JupyterLab process and refresh the page. 
 
 3. Restart the Jupyter process to pick up the changes. Find the process nuber using the command below: 
-<ql-code-block language="bash" >
+```
 kill -9 $(ps aux | grep '[j]upyter-lab' | awk '{print $2}')
-</ql-code-block>
+```
 
 **Note :** This will instantly close your Terminal tab.
 
