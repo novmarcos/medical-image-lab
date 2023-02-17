@@ -53,23 +53,32 @@ The installation fecthes several packages and can take some time, approximately 
 
 2. Run the following command in the shell to check the progress of the 3D Slicer installation.
 
-    cat /tmp/slicer-post-install.log
+```
+cat /tmp/slicer-post-install.log
+
+```
 
 
 When the script has completed you will see the following lines
 
-    #####  install additional packages in the slicer environment ####
+```
+#####  install additional packages in the slicer environment ####
 
-    ########################################
-    ##### Post Startup Script Complete #####
-    ########################################
+########################################
+##### Post Startup Script Complete #####
+########################################
+
+```
 
 
 Once the Google Medical Imaging Lab components have been installed you need to restart the JupyterLab process and refresh the page. 
 
 3. Restart the Jupyter process to pick up the changes. Find the process nuber using the command below: 
 
-    kill -9 $(ps aux | grep '[j]upyter-lab' | awk '{print $2}')
+```
+kill -9 $(ps aux | grep '[j]upyter-lab' | awk '{print $2}')
+
+```
 
 
 **Note :** This will instantly close your Terminal tab.
