@@ -33,10 +33,16 @@ To create a VM with the recommended configuration follow these steps:
 3. Open a Jupyter Terminal Window by selecting "Terminal" in the "Other" section
 4. In the new terminal window, CD to the installation directory and run the installation script:
 
-    chmod u+x ~/medical-image-lab/install
-    chmod u+x ~/medical-image-lab/scripts  
-    cd ~/medical-image-lab/install
-    ./install_lab.sh
+```
+chmod u+x ~/medical-image-lab/install
+
+chmod u+x ~/medical-image-lab/scripts 
+
+cd ~/medical-image-lab/install
+
+./install_lab.sh
+
+```
 
     
 ## 5. Wait for installation and restart the Jupyter Lab process
