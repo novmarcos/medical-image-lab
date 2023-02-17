@@ -7,7 +7,8 @@ There are only a few things that you need to know:
 3)  Creating a new Google Cloud Vertex AI Workbench instance generates costs in your Google Cloud project. A per minute cost estimate is provided in the instance creation dialog. While the scripts in this repo are provided free of charge, the user is responsible for the costs of running the underlying Google Cloud Vertex AI Workbench instance. Some of the labs proposed in this repo benefit from GPU acceleration, the user should understand that adding GPU resources increases the cost of the underlying VM. The user should stop or suspend the Cloud Vertex AI Workbench instance when not in use, and completely delete it when no longer needed in order to avoid charges to the user's Cloud project.
 
 **To deploy the Google Cloud Medical Imaging Lab:**
-follow the directions here: https://github.com/novmarcos/medical-image-lab/blob/main/instructions/en.md
+
+Follow the [installation directions here](/instructions/en.md)
 
 # Project Description
 This Google Cloud Medical Imaging Lab is an open source extension which adds medical imaging processing capabilities to the base Jupyter environment of the Google Cloud Vertex AI Workbench.  The following are the main packages that are fetched during the installation process:
