@@ -1,7 +1,7 @@
 # Google Cloud Medical Imaging Lab Installation Instruction
 
 ## 1. Login Into Your Google Cloud Project ##
-Using a browser, navigate to https://https://console.cloud.google.com/
+Using a browser, navigate to https://console.cloud.google.com/
 
 ## 2. Create a Vertex AI Workbench Instance for the Medical Imaging Lab
 These directions are for creating a Vertex AI Workbench instance with the recommended configuration, including a GPU. It is possible to run the lab with smaller machines which a are less costly. Due to the large number of additional packages installed, the boot disk should have at least 100G. You should use an additional disk for data. The use of a GPU is recommended for running AI applications, but it not a pre-requisite. It is possible to change the VM configuration after it is created to add or reduce CPU, memory, GPUs, disk sizes, etc...
