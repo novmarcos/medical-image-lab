@@ -39,7 +39,7 @@ echo #####  Configure updated JupyterLab options    #####
 echo ### add path of new packages to /etc/profile ###
 export CONDA_DIR=/opt/conda
 export HOME="/home/jupyter"
-export PATH="${CONDA_DIR}/bin:/usr/sbin:/usr/bin:/sbin:/bin:${HOME}/Slicer/lib/Python/bin:${PATH}"
+export PATH="${CONDA_DIR}/bin:/usr/sbin:/usr/bin:/sbin:/bin:${HOME}/Slicer/lib/Python/bin:${HOME}/.local/bin:${PATH}"
 export DISPLAY=":1.0"
 printf "export DISPLAY=$DISPLAY \nexport MIL_VERSION=1 \nexport PATH=$PATH" > /tmp/mil.env
 sudo sh -c 'cat /tmp/mil.env >> /etc/profile'
@@ -47,12 +47,22 @@ echo "#####  Configure updated JupyterLab options    #####" >> /tmp/slicer-post-
 
 echo #######################################################
 echo ########### Installing Jupyter Desktop ################
+# install websockify
+mkdir $HOME/websockify
+cd $HOME/websockify
+wget "https://github.com/novnc/websockify/archive/refs/heads/master.zip" -O websockify.zip
+unzip ./websockify.zip
+cd websockify-master
+make
+cp rebind.so $CONDA_DIR/lib
+pip install -e .
+# install jupyter_desktop
 mkdir $HOME/jupyter_desktop
 cd $HOME/jupyter_desktop
 wget 'https://github.com/yuvipanda/jupyter-desktop-server/archive/refs/heads/master.zip' -O jupyter-desktop-server.zip
 unzip ./jupyter-desktop-server.zip
 cd jupyter-desktop-server-master
-conda env update -n base --file environment.yml
+pip install -e .
 echo "########### Installing Jupyter Desktop ################" >> /tmp/slicer-post-install.log
 
 echo ####################################################
