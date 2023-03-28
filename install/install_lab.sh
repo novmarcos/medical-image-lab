@@ -125,7 +125,7 @@ echo "#### Create the Slicer extensions directory" >> /tmp/slicer-post-install.l
 
 
 echo #####  install additional packages in the slicer environment ####
-$HOME/Slicer/bin/PythonSlicer -m pip install --upgrade ipython ipywidgets ipyevents ipycanvas
+$HOME/Slicer/bin/PythonSlicer -m pip install ipython ipywidgets==8.0.2 ipyevents ipycanvas
 echo "#####  install additional packages in the slicer environment ####" >> /tmp/slicer-post-install.log
 
 echo "########################################" >> /tmp/slicer-post-install.log
