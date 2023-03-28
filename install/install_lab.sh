@@ -3,7 +3,6 @@ echo ##### Medical Imaging Post Startup Script Start ####
 echo ####################################################
 echo ##### Uodate Nodejs, jupyterlab widgets, and ipycanvas ####
 echo ####################################################
-conda install -y -c conda-forge nodejs
 npm install --global yarn
 pip uninstall --yes jupyterlab_widgets
 pip install --user ipycanvas
