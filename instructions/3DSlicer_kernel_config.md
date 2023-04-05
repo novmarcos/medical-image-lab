@@ -56,83 +56,17 @@ This will generate a kernel file and the installation command as shown below:
 
 ![3Dslicer Medical Imaging plugins list](img/3dslicer-plugins.png)
 
-4. Click **Copy command to clipboard**
+4. Run the following command block to install the Slicer 3D Jupyter Kernel
+Switch to the Jupyer Notebook view and open a terminal window. 
 
-The Clipboard functionality does not work with the Terminal application in this desktop environment so you need to save this command to a shell script and then execute the script. 
-
-5. Click the **Application Finder** icon on the task bar and search for `Mousepad`.
-
-6. Click **Mousepad** to open it. 
-
-Alternatively open a Terminal, type `Mousepad` and press **ENTER**. 
-
-7. Paste the coommand from 3DSlicer into Mousepad. 
-
-8. Click **File** > **Save As...**.
-
-9. Enter `create-kernel.sh` for the filename. 
-
-10. Leave the `jupyter` home directory as the directory. 
-
-11. Click **Save**.
-
-12. Switch back to the main JupyterLab tab ( not the **noVNC** Desktop tab).
-
-13. Open a JupyterLab terminal tab. This tab is open in the same user context as the Desktop and you can run Linux shell commands here where you can copy and paste from this lab manual into the shell. 
-
-13. Enter the following command into the terminal to make the script you saved earlier executable. 
-<ql-code-block language="bash" >
-chmod +x ~/create-kernel.sh
-</ql-code-block>
-
-14. Enter the following command into the terminal to generate the new kernel. 
-<ql-code-block language="bash" >
-~/create-kernel.sh
-</ql-code-block>
-
-You should now have a `kernel.json` file generated.
-
-15. Run the following command in the terminal to confirm that the 'kernel.json' file has been created. 
-
-<ql-code-block language="bash" >
-ls -l /home/jupyter/Slicer/NA-MIC/Extensions-31126/SlicerJupyter/share/Slicer-5.1/qt-loadable-modules/JupyterKernel/Slicer-5.1
-</ql-code-block>
-
-Before running the installation command, the file names of the png files in the kernel folder need to be changed so that the kernel icon will show properly in the Jupyter Launch page. 
-
-16. Change into the directory that stores the kernel files.
-<ql-code-block language="bash" >
-cd /home/jupyter/Slicer/NA-MIC/Extensions-31126/SlicerJupyter/share/Slicer-5.1/qt-loadable-modules/JupyterKernel/Slicer-5.1
-</ql-code-block>
-
-17. Change the names of the icon files using the following commands:
-<ql-code-block language="bash" >
-mv Slicer-32x32.png logo-32x32.png
-mv Slicer-64x64.png logo-64x64.png
-</ql-code-block>
-
-18. Now install the new kernel:
-<ql-code-block language="bash" >
-cd /home/jupyter/Slicer/NA-MIC/Extensions-31126/SlicerJupyter/share/Slicer-5.1/qt-loadable-modules/JupyterKernel/
-jupyter-kernelspec install Slicer-5.1 --replace --user
-</ql-code-block>
-
-You do not need to change this in this lab but for reference the 3DSlicer kernel will use the DISPLAY variable to launch 3DSlicer. The DISPLAY variable has been set to ":1.0" in `/etc/profile`, but you can this change to a specific display be adding environment variables to the kernel file as shown below:
-
-<ql-code-block language="bash" >
-{
-    "display_name": "Slicer 5.1",
-    "language" : "python",
-    "argv": [
-        "/home/jupyter/Slicer/bin/../Slicer",
-        "--no-splash",
-        "--python-code",
-        "connection_file=r'{connection_file}';print('JupyterConnectionFile:['+connection_file+']');slicer.modules.jupyterkernel.startKernel(connection_file);slicer.util.mainWindow().showMinimized()"
-    ],
-    "env": { "DISPLAY":":1.0" }
-}
-</ql-code-block>
-
+    <ql-code-block language="bash" >
+    cd ~/Slicer/NA-MIC/Extensions-31126/SlicerJupyter/share/Slicer-5.1/qt-loadable-modules/JupyterKernel/Slicer-5.1
+    mv Slicer-32x32.png logo-32x32.png
+    mv Slicer-64x64.png logo-64x64.png
+    cd ..
+    jupyter-kernelspec install Slicer-5.1 --replace --user
+    </ql-code-block>
+    
 ### 3. Running 3DSlicer Notebooks
 1. In the Jupyter window, select the Foldeer icon to go to the top directory
 In the Jupyer Menu, select **Git** then "Clone Repository" and enter the URL below:

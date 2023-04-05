@@ -8,20 +8,16 @@ These directions are for creating a Vertex AI Workbench instance with the recomm
 
 To create a VM with the recommended configuration follow these steps:
 
-1. In Navigation Menu select **Vertex AI** > **Workbench**.
+1. In Navigation Menu (![Navigation menu icon](https://storage.googleapis.com/cloud-training/images/menu.png)) select **Vertex AI** > **Workbench**.
 2. Click "Enable the Notebooks API" button if needed
-3. Click **User-managed notebooks** and then click **New notebook** then **Customize**
-4. In **Properties** enter the **Notebook Name** as **medical-imaging**.
-5. For **Region** and **Zone** select **us-west1**. (or any other region, you should co-locate the VM with the GCS storage buckets you plan to use)
-6. Click the **Environment** bullet, leave the default "Operating System" unchanged (Debian 10)
-7. Under "Environment" Click **Pytorch 1.13** 
-6. Click**Machine Configuration**, select the recommended type **n1-standard-16** and "GPU Type" as **NVIDIA T4**
-    * The use of GPUs is optional but recommended
-7. Check the box **Install NVIDIA GPU driver automatically for me**. 
+3. Click **User-managed notebooks** and then click **New notebook**
+4. In the pull down menu, select **Pytorch 1.13** and then **With 1 NVIDIA T4**
+4. Enter a name in the **Notebook Name** field, such as **medical-imaging**.
+5. For **Region** and **Zone** select **us-central1**. 
+7. Check the box a the bottom **Install NVIDIA GPU driver automatically for me**. 
 8. Click **Create**.
-10. Wait for the **Open JupyterLab** link to open in the list of notebook instances. 
-11. Click **Open JupyterLab**. You will be brought to the Jupyterlab instance home screen. 
-12. The first time Jupyter opens it launches a dialog informing that Beatrix did not build correclty. This is fine, click "Cancel"
+9. Wait for the **Open JupyterLab** link to open in the list of notebook instances. 
+10. Click **Open JupyterLab**. You will be brought to the Jupyterlab instance home screen. 
 
 ## 3. Clone the Google Medical Imaging Suite Repository
 1. In the Jupyterlab Menu, click **Git** > **Clone a Repository**
