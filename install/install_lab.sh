@@ -105,7 +105,7 @@ echo ##### install libxcb-util #####
 sudo apt-get install -y xcb
 sudo apt install -y libxcb-xkb1
 sudo apt-get install -y qt5-default
-sudo apt-get install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
+sudo apt-get install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
 
 echo ##### add missing links ####
 sudo ln -s /usr/lib/x86_64-linux-gnu/libxcb-util.so.0.0.0 /usr/lib/x86_64-linux-gnu/libxcb-util.so.1
